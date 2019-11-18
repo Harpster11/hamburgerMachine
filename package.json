@@ -1,0 +1,35 @@
+{
+  "name": "hamburgermachine",
+  "version": "1.0.0",
+  "description": "An application to keep track of what hamburgers you've eaten today.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harpster11/hamburgerMachine.git"
+  },
+  "keywords": [
+    "hamburger",
+    "application",
+    "eat",
+    "burgers",
+    "eating",
+    "eater"
+  ],
+  "author": "John Harper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Harpster11/hamburgerMachine/issues"
+  },
+  "homepage": "https://github.com/Harpster11/hamburgerMachine#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.17.1"
+  }
+}
