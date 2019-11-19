@@ -1,12 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var exphbs = require('exress-handlebars');
+var exphbs = require('express-handlebars');
+const router = express.Router();
 
-var app = express ();
+var app = express();
 app.use(express.static(__dirname + '/public'));
 
-app.use(bodyParser.urleconded({
+app.use(bodyParser.urlencoded({
     extended: false
 }));
 
@@ -17,7 +18,12 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
+var routes = require("./controllers/routes");
+app.use(routes);
+
 var port = 3000; 
 app.listen(port);
 
 console.log("Listening on", port);
+
+module.exports = router;
