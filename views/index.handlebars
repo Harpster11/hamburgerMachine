@@ -7,6 +7,34 @@
     <title>Welcome to the Hamburger Machine</title>
 </head>
 <body>
-    <p>Successfully connected to the server!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 text-center" id="header">
+            <h1>BURGERMAN MACHINE</h1>
+            <br>
+            <h2>Eat the burger. Know the burger.</h2>
+        </div>
+        <div class="col xs-6 text-center">
+        <div class="row">
+            {{#each burger_data}}
+                {{#unless this.devoured}}
+            <div class="col xs-9 text-center">
+                <pre>{{this.id}}. {{this.burger_name}}</pre>
+            </div>
+            <div class="col-xs-3 text-center">
+                <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+                    <input type="hidden" name="burger_id" type="text" value={{this.id}}>
+                    <br>
+                    <button type="submit" class="btn btn-default">EAT BURGER</button>
+                </form>
+                <div>
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
