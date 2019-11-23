@@ -12,7 +12,29 @@ var orm = {
             if(err){throw err;}
             cb(result);
         })
-    } 
-}
+    } ,
+
+    create: function(table, val, cb) {
+        var queryString = "INSERT INTO " + table;
+    
+        queryString += ' (burger_name)';
+        queryString += ' VALUES (';
+        queryString += '"';
+        queryString += val.toString();
+        queryString += '"'
+        queryString += ') ';
+    
+        console.log(queryString);
+    
+        connection.query(queryString, val, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      },
+    }
+
 
 module.exports = orm;

@@ -11,8 +11,12 @@ var burger = {
         orm.update('burgers',id, function(res) {
         cb(res);
         });
-        }
+        },
+    create: function(name, cb){
+        orm.create('burgers', name, cb);
+
     }
 
+}
 
 module.exports = burger
