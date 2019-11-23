@@ -6,15 +6,16 @@ router.get('/', function(req, res){
     // calling burger within the burger.js file
     burger.all(function(burger_data){
         console.log("Burgers",burger_data);
-        res.render('index');
+        res.render('index',{burger_data});
     })
 });
 
-router.put("/burgers/update",function(req,res){
+router.post('/burgers/update',function(req,res){
+    console.log('burger update route')
     burger.update(req.body.burger_id, function(result){
         console.log("Put update route:",result);
-        res.redirect("/");
-    })
-})
+        res.redirect('/');
+    });
+});
 
 module.exports = router;
